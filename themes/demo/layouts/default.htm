@@ -1,0 +1,197 @@
+title = "Blog"
+url = "/blog"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+title = "Blog"
+url = "/blog"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = ""
+postsPerPage = 5
+noPostsMessage = "No posts available."
+sortOrder = "published_at desc"
+---
+<style>
+    .blog-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+    .blog-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .blog-header h1 {
+        font-size: 2.5em;
+        color: #333;
+    }
+    .blog-header p {
+        font-size: 1.2em;
+        color: #777;
+    }
+    .blog-posts {
+        margin-bottom: 40px;
+    }
+    .blog-post {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .blog-post h2 {
+        font-size: 1.8em;
+        color: #333;
+    }
+    .blog-post .post-date {
+        font-size: 0.9em;
+        color: #999;
+    }
+    .blog-post p {
+        font-size: 1.1em;
+        color: #555;
+    }
+    .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .read-more:hover {
+        background-color: #0056b3;
+    }
+    .pagination {
+        text-align: center;
+    }
+    .pagination a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .pagination a:hover {
+        background-color: #e2e6ea;
+    }
+</style>
+
+<div class="blog-container">
+    <header class="blog-header">
+        <h1>Welcome to My Blog</h1>
+        <p>Sharing insights, stories, and updates</p>
+    </header>
+    <div class="blog-posts">
+        {% for post in blogPosts.posts %}
+        <article class="blog-post">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="post-date">Published on {{ post.published_at|date('M d, Y') }}</p>
+            <p>{{ post.summary|raw }}</p>
+            <a href="{{ post.url }}" class="read-more">Read More</a>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {{ blogPosts.renderPagination() }}
+    </div>
+</div>
+categoryFilter = ""
+postsPerPage = 5
+noPostsMessage = "No posts available."
+sortOrder = "published_at desc"
+---
+<style>
+    .blog-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+    .blog-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .blog-header h1 {
+        font-size: 2.5em;
+        color: #333;
+    }
+    .blog-header p {
+        font-size: 1.2em;
+        color: #777;
+    }
+    .blog-posts {
+        margin-bottom: 40px;
+    }
+    .blog-post {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .blog-post h2 {
+        font-size: 1.8em;
+        color: #333;
+    }
+    .blog-post .post-date {
+        font-size: 0.9em;
+        color: #999;
+    }
+    .blog-post p {
+        font-size: 1.1em;
+        color: #555;
+    }
+    .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .read-more:hover {
+        background-color: #0056b3;
+    }
+    .pagination {
+        text-align: center;
+    }
+    .pagination a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .pagination a:hover {
+        background-color: #e2e6ea;
+    }
+</style>
+
+<div class="blog-container">
+    <header class="blog-header">
+        <h1>Welcome to My Blog</h1>
+        <p>Sharing insights, stories, and updates</p>
+    </header>
+    <div class="blog-posts">
+        {% for post in blogPosts.posts %}
+        <article class="blog-post">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="post-date">Published on {{ post.published_at|date('M d, Y') }}</p>
+            <p>{{ post.summary|raw }}</p>
+            <a href="{{ post.url }}" class="read-more">Read More</a>
+        </article>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {{ blogPosts.renderPagination() }}
+    </div>
+</div>

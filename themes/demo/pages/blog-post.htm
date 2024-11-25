@@ -1,0 +1,17 @@
+title = "blog-post"
+url = "/blog"
+is_hidden = 0
+==
+title = "Chi Tiết Bài Viết"
+url = "/blog/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+---
+<h1>{{ blogPost.post.title }}</h1>
+<div>
+    {{ blogPost.post.content|raw }}
+</div>
+<p><a href="/blog">Quay lại Blog</a></p>
